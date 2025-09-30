@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn HTML-PAGE-02</title>
+</head>
+
+<body>
+    <img src="https://www.cantech.in/blog/wp-content/uploads/2024/03/What-is-HTML-958x575.webp" height="450px"
+        width="100%" alt="HTML Image">
+    <hr>
+    <nav>
+        <table border="2" width="80%" align="center">
+            <tr>
+                <td><a href="index.html">Home</a></td>
+                <td><a href="page1.html">Page-01</a></td>
+                <td><a href="page2.html">Page-02</a></td>
+                <td><a href="page3.html">Page-03</a></td>
+                <td><a href="page4.html">Page-04</a></td>
+                <td><a href="page5.html">Page-05</a></td>
+                <td><a href="page6.html">Page-06</a></td>
+            </tr>
+        </table>
+    </nav>
+    <hr>
+    <h1>📘 HTML Notes</h1>
+    <h2>🔹What is HTML?</h2>
+    <ul>
+        <li><strong>HTML</strong> stands for HyperText Markup Language.</li>
+        <li>It is the <strong>standard language</strong> used to create and structure the content of a webpage.</li>
+    </ul>
+    <h3>Breakdown:</h3>
+    <ul>
+        <li><strong>HyperText:</strong> Ability to create links that connect web pages → makes the web a connected
+            network.</li>
+        <li><strong>Markup Language:</strong> Uses <strong>tags</strong> to mark up plain text, giving meaning &
+            structure.</li>
+    </ul>
+    <p>🔗 <strong>First Website:</strong><a href="https://info.cern.ch/hypertext/WWW/TheProject.html" target="_blank">
+            The World's First Website.</a></p>
+    <hr>
+    <h2>🛠 Install Required Software</h2>
+    <ol>
+        <h3>
+            <li>Install Visual Studio Code
+        </h3>
+        <ul>
+            <li>Free code editor from Microsoft.</li>
+            <li>Download:<a href="https://code.visualstudio.com/" target="_blank">VS Code</a></li>
+        </ul>
+        </li>
+        <h3>
+            <li>Install VS Code Extensions
+        </h3>
+        <ul>
+            <li><a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode.live-server" target="_blank">Live
+                    Preview</a> – Live reload preview of your HTML page.</li>
+            <li><a href="https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode"
+                    target="_blank">Prettier</a> – Code formatter.</li>
+            <li><strong>Live Server</strong> – Opens your project in the browser automatically.</li>
+        </ul>
+        </li>
+    </ol>
+    <hr>
+    <h2>✨ Basic HTML Elements</h2>
+    <ol>
+        <h3>
+            <li>Headings (&lt;h1&gt; to &lt;h6&gt;)
+        </h3>
+        <ul>
+            <li>Define titles & subtitles; create logical structure.</li>
+            <li>&lt;h1&gt; → Most important (usually one per page).</li>
+            <li>&lt;h2&gt; → Major section.</li>
+            <li>&lt;h3&gt; → Sub-section under &lt;h2&gt;.</li>
+            <li>… continues to &lt;h6&gt; (least important)</li>
+            <h4>Example:</h4>
+        <table border="1" width="80%">
+            <tr><td>
+            <pre>
+            &lt;h1&gt;Heading 1&lt;/h1&gt;
+            &lt;h2&gt;Heading 2&lt;/h2&gt;
+            &lt;h3&gt;Heading 3&lt;/h3&gt;
+            &lt;h4&gt;Heading 4&lt;/h4&gt;
+            &lt;h5&gt;Heading 5&lt;/h5&gt;
+            &lt;h6&gt;Heading 6&lt;/h6&gt;
+            </pre>
+            </td> </tr>
+        </table>
+            <p>
+            <h3>***Purpose: </h3>📒 Structure, not just styling. Helps humans + search engines + screen readers.</p>
+
+        </ul>
+        </li>
+        <hr>
+        <h3>
+            <li>
+                Paragraph(&lt;p&gt;)
+        </h3>
+        <ul>
+            <li>Groups sentences & text blocks together.</li>
+            <li>Browsers automatically add spacing around &lt;p&gt;.</li>
+            <li>Use <strong>multiple</strong> &lt;p&gt; <strong>tags</strong> instead of line breaks for new paragraphs.
+            </li>
+        </ul>
+        <h4>Example:</h4>
+        <table border="1" width="80%">
+            <tr><td>
+        <pre>
+            &lt;p&gt;This is the first paragraph. It contains several sentences about a topic.&lt;/p&gt;
+        </pre>
+        </td> </tr>
+        </table>
+        </li>
+
+        <hr>
+
+        <h3>
+            <li>
+                Horizontal Rule (&lt;hr&gt;)
+        </h3>
+        <ul>
+            <li>Defines a thematic break in the page.</li>
+            <li>Usually displayed as a horizontal line.</li>
+
+        </ul>
+        <h4>Example:</h4>
+        <table border="1" width="80%">
+            <tr><td>
+        <pre>
+            &lt;p&gt;This is the first topic.&lt;/p&gt; 
+            &lt;hr /&gt; 
+            &lt;p&gt;This is a completely different topic.&lt;/p&gt;
+        </pre>
+        </td> </tr>
+        </table>
+        </li>
+
+        <hr>
+
+        <h3>
+            <li>Line Break (&lt;br&gt;)
+        </h3>
+        <ul>
+            <li>Forces text to continue on the next line.</li>
+            <li>Useful for addresses, poems, etc.</li>
+        </ul>
+        <h4>Example:</h4>
+        <table border="1" width="80%">
+            <tr><td>
+        <pre>
+            &lt;p&gt;221B Baker Street&lt;br&gt;London, England&lt;/p&gt;
+        </pre>
+        </td> </tr>
+        </table>
+        </li>
+        <hr>
+
+        <h3>
+            <li>List Elements (&lt;ul&gt;, &lt;ol&gt;, &lt;li&gt;)
+        </h3>
+        <ul>
+            <li>&lt;ul&gt; → Unordered list (bullets).</li>
+            <li>&lt;ol&gt; → Ordered list (numbers).</li>
+            <li>&lt;li&gt; → List item (inside &lt;ul&gt; or &lt;ol&gt;).</li>
+        </ul>
+
+        <h4>Example:</h4>
+        <table border="1" width="80%">
+            <tr><td>
+        <pre>
+            &lt;ul&gt;
+            &lt;li&gt;Tea Bag&lt;/li&gt;<br>
+            &lt;li&gt;Water&lt;/li&gt;<br>
+            &lt;li&gt;Sugar&lt;/li&gt;<br>
+            &lt;li&gt;Milk&lt;/li&gt;<br>
+            &lt;/ul&gt;<br><br>
+
+            &lt;ol&gt;<br>
+            &lt;li&gt;First, boil the water in a kettle.&lt;/li&gt;<br>
+            &lt;li&gt;Add tea bag, sugar and milk into it&lt;/li&gt;<br>
+            &lt;li&gt;Keep boiling it for 5 minutes&lt;/li&gt;<br>
+            &lt;li&gt;Serve the tea by pouring it into cup&lt;/li&gt;<br>
+            &lt;/ol&gt;
+        </pre>
+        </td> </tr>
+        </table>
+        </li>
+        <hr>
+
+        <h3>
+            <li>Anchor Tag (&lt;a&gt;)
+        </h3>
+        <ul>
+            <li>Creates hyperlinks → makes web hypertext.</li>
+            <li>Needs <strong>href</strong> attribute to specify destination URL.</li>
+        </ul>
+        <h4>Example:</h4>
+        <table border="1" width="80%">
+            <tr><td>
+        <pre>
+            &lt;a href="https://www.coderarmy.in/"&gt;Vist Coder Army&lt;/a&gt;
+        </pre>
+        </td> </tr>
+        </table>
+        </li>
+        <h3>
+            <li>Image Tag (&lt;img&gt;)
+        </h3>
+        <ul>
+            <li>Embeds images into the webpage.</li>
+            <li><strong>Self-closing tag.</strong></li>
+            <li>Requires:
+                <ul>
+                    <li><strong>src</strong> → Source/path of image.</li>
+                    <li><strong>alt</strong> → Alternative text (for accessibility & when image fails to load).</li>
+                </ul>
+            </li>
+        </ul>
+        <h4>Example:</h4>
+        <table border="1" width="80%">
+            <tr><td>
+        <pre>
+                &lt;img src="https://cdn.britannica.com/16/234216-050-C66F8665/beagle-hound-dog.jpg" height="300px" width="300px" alt="This is Dog Photo"&gt;
+            </pre>
+        </td> </tr>
+        </table>
+        </li>
+    </ol>
+    <hr>
+    <h1>📑 HTML Tags – Quick Revision Sheet</h1>
+
+    <table border="3" width="80%" align="center" cellpadding="10" cellspacing="0">
+        <tr>
+            <th>Tag</th>
+            <th>Full Form / Meaning</th>
+            <th>Purpose</th>
+            <th>Example</th>
+        </tr>
+        <tr>
+            <td><code>&lt;h1&gt; ... &lt;h6&gt;</code></td>
+            <td>Headings</td>
+            <td>Define titles and subtitles</td>
+            <td><code>&lt;h1&gt;Main Title&lt;/h1&gt;</code></td>
+        </tr>
+        <tr>
+            <td><code>&lt;p&gt;</code></td>
+            <td>Paragraph</td>
+            <td>Group sentences into paragraphs</td>
+            <td><code>&lt;p&gt;This is a paragraph.&lt;/p&gt;</code></td>
+        </tr>
+        <tr>
+            <td><code>&lt;br&gt;</code></td>
+            <td>Line Break</td>
+            <td>Moves text to the next line</td>
+            <td><code>Hello&lt;br&gt;World</code></td>
+        </tr>
+        <tr>
+            <td><code>&lt;hr&gt;</code></td>
+            <td>Horizontal Rule</td>
+            <td>Creates a horizontal line</td>
+            <td><code>&lt;hr&gt;</code></td>
+        </tr>
+        <tr>
+            <td><code>&lt;ul&gt;</code></td>
+            <td>Unordered List</td>
+            <td>Creates a bulleted list</td>
+            <td><code>&lt;ul&gt;&lt;li&gt;Item&lt;/li&gt;&lt;/ul&gt;</code></td>
+        </tr>
+        <tr>
+            <td><code>&lt;ol&gt;</code></td>
+            <td>Ordered List</td>
+            <td>Creates a numbered list</td>
+            <td><code>&lt;ol&gt;&lt;li&gt;Step 1&lt;/li&gt;&lt;/ol&gt;</code></td>
+        </tr>
+        <tr>
+            <td><code>&lt;li&gt;</code></td>
+            <td>List Item</td>
+            <td>Each item inside a list</td>
+            <td><code>&lt;li&gt;Tea&lt;/li&gt;</code></td>
+        </tr>
+        <tr>
+            <td><code>&lt;a&gt;</code></td>
+            <td>Anchor (Hyperlink)</td>
+            <td>Creates clickable links</td>
+            <td><code>&lt;a href="https://example.com"&gt;Visit&lt;/a&gt;</code></td>
+        </tr>
+        <tr>
+            <td><code>&lt;img&gt;</code></td>
+            <td>Image</td>
+            <td>Embeds an image</td>
+            <td><code>&lt;img src="dog.jpg" alt="Dog"&gt;</code></td>
+        </tr>
+        <tr>
+            <td><code>&lt;pre&gt;</code></td>
+            <td>Preformatted Text</td>
+            <td>Preserves spaces & line breaks</td>
+            <td><code>&lt;pre&gt;Line 1&lt;br&gt;Line 2&lt;/pre&gt;</code></td>
+        </tr>
+        <tr>
+            <td><code>&amp;lt;</code> &amp; <code>&amp;gt;</code></td>
+            <td>HTML Entities</td>
+            <td>Show &lt; and &gt; as text</td>
+            <td><code>&amp;lt;p&amp;gt;Hello&amp;lt;/p&amp;gt;</code></td>
+        </tr>
+    </table>
+    <hr>
+
+    <h4>Recommended video:</h4>
+    <iframe src="https://youtube.com/embed/GkZN_-HMCJ8?si=6LaU-j4xedO3B13v" allowfullscreen></iframe>
+    <hr>
+    <footer>
+        <a href="page1.html">🚀| ← Previous Page |</a>
+        <a href="page3.html">🚀| Next Page → |</a>
+    </footer>
+</body>
+
+</html>

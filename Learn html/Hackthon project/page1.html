@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn HTML-PAGE-01</title>
+
+</head>
+
+<body>
+    <img src="https://mocomi.com/wp-content/uploads/2016/10/MOC_GIFO_INTERNET.gif" height="450px" width="100%"
+        alt="Internt Image">
+    <hr>
+    <nav>
+        <table border="2" width="80%" align="center">
+            <tr>
+                <td><a href="index.html">Home</a></td>
+                <td><a href="page1.html">Page-01</a></td>
+                <td><a href="page2.html">Page-02</a></td>
+                <td><a href="page3.html">Page-03</a></td>
+                <td><a href="page4.html">Page-04</a></td>
+                <td><a href="page5.html">Page-05</a></td>
+                <td><a href="page6.html">Page-06</a></td>
+            </tr>
+        </table>
+    </nav>
+    <hr>
+    <h1>📒How Does Internet Work?</h1>
+    <br>
+    <h2>Principle 1: The Need to Share Information</h2>
+    <ul>
+        <li>Goal: Transfer data from <strong>Computer A → Computer B</strong> (not in same room).</li>
+        <li>Primitive solution: Use USB stick → <strong>slow, not scalable</strong>.</li>
+        <li>Better solution: Run a <strong>cable</strong> (ethernet/fiber) → send electrical signals/light pulses.
+            <ul>
+                <li><strong>High voltage = 1</strong></li>
+                <li><strong>Low voltage = 0</strong></li>
+            </ul>
+        </li>
+        <li>This forms a <strong>direct link</strong> → able to send bits (1s, 0s).</li>
+    </ul>
+
+    <h2>Principle 2: The Problem of Scale</h2>
+    <ul>
+        <li>With 3 computers (A, B, C) → need many cables.</li>
+        <li>For 100 computers → need 4,950 cables → <strong>not scalable.</strong></li>
+        <li>Solution: Use a <strong>Switch</strong> (central device).
+            <ul>
+                <li>Each computer connects to switch.</li>
+                <li>Switch forwards message only to correct destination.</li>
+            </ul>
+        </li>
+        <li>This creates a <strong>Local Network (LAN)</strong>.</li>
+    </ul>
+    <h2>Principle 3: The Problem of Connecting Networks</h2>
+    <ul>
+        <li>Each office may have its own LAN.</li>
+        <li>How to connect LANs? Cannot wire every computer to every other.</li>
+        <li>Solution: Use a <strong>Router</strong> (special device).
+            <ul>
+                <li>Router connects multiple networks.</li>
+                <li>Routes traffic between networks.</li>
+            </ul>
+        </li>
+        <li>The Internet = a <strong>network of networks</strong> (millions of LANs connected via routers).</li>
+    </ul>
+    <h2>Principle 4: The Problem of Finding Anyone (Addressing)</h2>
+    <ul>
+        <li>Need a <strong>unique address</strong> for every device in global network.</li>
+        <li><strong>IP Address</strong> introduced:
+            <ul>
+                <li>Works like a postal address.</li>
+                <li>Routers use destination IP to forward packets toward the right path (hop by hop).</li>
+            </ul>
+        </li>
+    </ul>
+    <h2>Principle 5: Reliability & Fairness</h2>
+    <ul>
+        <li>Sending a large file all at once = problems:
+            <ol>
+                <li>Blocks other users (monopoly).</li>
+                <li>Error in 1 bit → file ruined.</li>
+            </ol>
+        </li>
+        <li>Solution: Break data into <strong>Packets</strong>.
+            <ul>
+                <li>Each packet contains:
+                    <ul>
+                        <li>Payload (data piece).</li>
+                        <li>Destination IP.</li>
+                        <li>Sender IP.</li>
+                        <li>Sequence number (to reassemble).</li>
+                    </ul>
+                </li>
+                <li>Packets may take different routes → receiver reassembles.</li>
+            </ul>
+        </li>
+        <li>This is handled by <strong>TCP/IP protocol</strong>.</li>
+    </ul>
+    <hr>
+    <h2>🔑 Summary from First Principles</h2>
+    <ol>
+        <li>Share data → Direct Link.</li>
+        <li>Many computers → Local Network with Switch.</li>
+        <li>Many networks → Internet via Routers.</li>
+        <li>Find devices → IP Address system.</li>
+        <li>Reliability → TCP/IP with Packets.</li>
+    </ol>
+    <hr>
+    <h2>IP Address</h2>
+    <ol>
+        <h2>
+            <li>Public IP Address</li>
+        </h2>
+        <ul>
+            <li>Global, unique address (like company’s main phone).</li>
+            <li>Must be unique worldwide.</li>
+            <li>Assigned by ISP.</li>
+            <li>Example: Router’s IP (seen on <a href="https://www.whatismyip.com" target="_blank">whatismyip.com</a>).
+            </li>
+            <li>Servers like Google/Netflix have public IPs.</li>
+        </ul>
+
+        <h2>
+            <li>Private IP Address</li>
+        </h2>
+        <ul>
+            <li>Used within local networks (e.g., home Wi-Fi).</li>
+            <li>Like employee’s internal extension number.</li>
+            <li>Unique only in local scope.</li>
+            <li>Assigned by Router.</li>
+            <li>Reserved ranges:
+                <ul>
+                    <li><code>10.0.0.0 – 10.255.255.255</code> (large networks)</li>
+                    <li><code>172.16.0.0 – 172.31.255.255</code> (medium networks)</li>
+                    <li><code>192.168.0.0 – 192.168.255.255</code> (home networks)</li>
+                </ul>
+            </li>
+        </ul>
+    </ol>
+    <br>
+    <table border="2" width="80%" align="center" cellpadding="10" cellspacing="0">
+        <tr>
+            <th>Feature</th>
+            <th>IPv4</th>
+            <th>IPv6</th>
+        </tr>
+        <tr>
+            <th>Address Size</th>
+            <td>32 bits</td>
+            <td>128 bits</td>
+        </tr>
+        <tr>
+            <th>Number of Addresses</th>
+            <td>~4.3 billion (2^32)</td>
+            <td>3.4 × 10^38 (2^128) – practically unlimited</td>
+        </tr>
+        <tr>
+            <th>Address Format</th>
+            <td>Decimal, 4 octets separated by dots (e.g., 192.168.0.1)</td>
+            <td>Hexadecimal, 8 groups separated by colons (e.g., 2001:0db8:85a3:0000:0000:8a2e:0370:7334)</td>
+        </tr>
+        <tr>
+            <th>Address Type</th>
+            <td>Unicast, Broadcast, Multicast</td>
+            <td>Unicast, Anycast, Multicast (no Broadcast)</td>
+        </tr>
+        <tr>
+            <th>Header Complexity</th>
+            <td>Simple header (20 bytes)</td>
+            <td>More complex header (40 bytes) with optional extension headers</td>
+        </tr>
+        <tr>
+            <th>Configuration</th>
+            <td>Manual or DHCP</td>
+            <td>Auto-configuration (stateless or DHCPv6)</td>
+        </tr>
+        <tr>
+            <th>Security</th>
+            <td>Optional (IPSec is optional)</td>
+            <td>Built-in support for IPSec</td>
+        </tr>
+        <tr>
+            <th>Fragmentation</th>
+            <td>Done by sender and routers</td>
+            <td>Done only by sender; routers do not fragment</td>
+        </tr>
+        <tr>
+            <th>Compatibility</th>
+            <td>Older, widely used</td>
+            <td>Designed for modern internet; coexists with IPv4 (dual-stack)</td>
+        </tr>
+        <tr>
+            <th>Exhaustion</th>
+            <td>Limited addresses → shortage</td>
+            <td>Huge address space → solves exhaustion problem</td>
+        </tr>
+        <tr>
+            <th>NAT Needed?</th>
+            <td>Often needed due to shortage</td>
+            <td>Usually not needed due to vast address space</td>
+        </tr>
+    </table>
+    <hr>
+    <h2>MAC Address</h2>
+    <p>Permanent, hardware ID for network devices.</p>
+    <p>48-bit number → written as 12 hex digits.</p>
+    <p>Formats:</p>
+    <ul>
+        <li>Colon-separated: <code>3C:22:FB:A3:B4:C5</code></li>
+        <li>Hyphen-separated: <code>3C-22-FB-A3-B4-C5</code></li>
+        <li>Cisco style: <code>3c22.fba3.b4c5</code></li>
+        <li>No separator: <code>3C22FBA3B4C5</code></li>
+    </ul>
+    <p>Find MAC Address:</p>
+    <ul>
+        <li>Windows: <code>ipconfig /all</code> or <code>getmac /v</code></li>
+        <li>macOS/Linux: <code>ifconfig</code></li>
+    </ul>
+
+    <h2>Port Number</h2>
+    <p>Identifies specific apps/services on a device.</p>
+    <p>Works with IP to route traffic.</p>
+    <p>16-bit unsigned integer (0–65535).</p>
+
+    <h2>Categories of Ports</h2>
+    <h3>Well-Known Ports (0–1023)</h3>
+    <ul>
+        <li>Controlled by IANA.</li>
+        <li>Require admin rights.</li>
+        <li>Examples: 21 (FTP), 22 (SSH), 25 (SMTP), 53 (DNS), 80 (HTTP), 443 (HTTPS)</li>
+    </ul>
+
+    <h3>Registered Ports (1024–49151)</h3>
+    <ul>
+        <li>For applications, less strict.</li>
+        <li>No admin rights needed.</li>
+        <li>Examples: 3000 (React/Node dev server), 3306 (MySQL), 5432 (PostgreSQL), 27017 (MongoDB), 8080 (alt web
+            server)</li>
+    </ul>
+
+    <h3>Dynamic / Ephemeral Ports (49152–65535)</h3>
+    <ul>
+        <li>Temporary client-side ports.</li>
+        <li>Auto-assigned by OS.</li>
+        <li>Used for outgoing connections.</li>
+    </ul>
+
+    <h2>DNS (Domain Name System)</h2>
+    <p>Translates domain names → IP addresses.</p>
+    <p>Without DNS, we’d memorize IPs.</p>
+
+    <h2>Process of DNS Lookup</h2>
+    <h3>Check Cache (fastest option):</h3>
+    <ul>
+        <li>Browser cache → OS cache → Router cache.</li>
+        <li>If found, use cached IP.</li>
+    </ul>
+
+    <h3>Recursive Resolver (asks on behalf):</h3>
+    <ul>
+        <li>Usually ISP’s server (or public: <code>8.8.8.8</code>, <code>1.1.1.1</code>).</li>
+        <li>Does the "hard work".</li>
+    </ul>
+
+    <h3>Hierarchical Search:</h3>
+    <ul>
+        <li>Root Server: Points to TLD servers (.com, .org, etc.)</li>
+        <li>TLD Server: Points to authoritative servers for domain</li>
+        <li>Authoritative Server: Gives actual IP (source of truth)</li>
+    </ul>
+
+    <h3>Journey Back:</h3>
+    <ul>
+        <li>IP returned → cached by resolver → sent to OS → given to browser</li>
+    </ul>
+
+    <h3>Final Connection:</h3>
+    <p>Browser connects to IP (e.g., <code>142.250.72.206</code>) on port 443 and requests webpage.</p>
+    <hr>
+    <h4>The visually explaintion:</h4>
+    <img src="https://media.geeksforgeeks.org/wp-content/uploads/20250517123610753800/working-of-html.webp" height="450px" width="70%" alt="Image of how internet works">
+    <hr>
+    <h4>Recommended video:</h4>
+    <iframe src="https://youtube.com/embed/1pcikNlDB-4?si=ySE30GYh1PBMEzyk" allowfullscreen></iframe>
+    <hr>
+    <footer>
+        <a href="index.html">🚀| ← Back to Home |</a> 
+        <a href="page2.html">🚀| Next Page → |</a>
+    </footer>
+</body>
+
+</html>

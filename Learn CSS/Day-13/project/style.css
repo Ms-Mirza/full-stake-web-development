@@ -1,0 +1,41 @@
+*{
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+body{
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+}
+
+.container{
+  background-color: rgb(17, 238, 238);
+  border-radius: 1px solid azure;
+  font-size: 40px;
+  padding: 10px;
+  color:red;;
+  width: 70%;
+  white-space: nowrap;
+  overflow: hidden;
+
+}
+
+p{
+  margin-left: 50%;
+  animation-name: moving;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes moving {
+   from{
+      margin-left: 100%;
+   }
+   to{
+      margin-left:-100% ;
+      
+   }
+}

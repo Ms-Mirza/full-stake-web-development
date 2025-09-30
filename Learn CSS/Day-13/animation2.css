@@ -1,0 +1,64 @@
+    .flower {
+        position: relative;
+        width: 100px; /* Adjust size as needed */
+        height: 100px;
+        margin: 50px auto;
+    }
+
+    .center {
+        width: 30px;
+        height: 30px;
+        background-color: yellow;
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .petal {
+        width: 40px;
+        height: 20px;
+        background-color: pink;
+        border-radius: 50% / 100% 100% 0 0; /* Creates a petal shape */
+        position: absolute;
+        transform-origin: bottom center; /* For rotation around the base */
+    }
+
+    /* Position and rotate individual petals */
+    .petal-1 {
+        top: 10px;
+        left: 30px;
+        transform: rotate(0deg);
+    }
+    .petal-2 {
+        top: 30px;
+        left: 60px;
+        transform: rotate(90deg);
+    }
+    /* Add styles for other petals */
+
+    .stem {
+        width: 5px;
+        height: 80px;
+        background-color: green;
+        position: absolute;
+        bottom: -80px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+        @keyframes blossom {
+        0% {
+            transform: scale(0) rotate(0deg);
+            opacity: 0;
+        }
+        50% {
+            transform: scale(1) rotate(180deg);
+            opacity: 1;
+        }
+        100% {
+            transform: scale(1) rotate(360deg);
+            opacity: 1;
+        }
+    } 

@@ -1,0 +1,41 @@
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+h1{
+    background-color: orange;
+}
+
+#firstId{
+    background-color: brown;
+}
+
+.classA{
+    background-color: greenyellow !important;
+    color: blue;
+    position: relative;
+    top: 0px;
+}
+
+h2{
+    background-color: aquamarine;
+    position: sticky;
+    top: 0px;
+    z-index: 10;
+}
+
+h3{
+    background-color: aqua;
+    position:fixed;
+    left: 250px;
+    top: 0px;
+    z-index: 10; 
+}
+
+p{
+    background-color: bisque;
+    position: relative;
+    top:40px
+}

@@ -1,0 +1,363 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    
+}
+
+body{
+    background-color: #1e1e1e;
+    font-family: sans-serif;
+    color: #a0a0a0;
+    line-height: 1.6;
+    
+    
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr;   /* ✅ start with single column (mobile) */
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;            /* ✅ flexible instead of fixed width */
+    margin: auto;
+}
+
+@media (min-width: 768px) {
+    .container {
+        grid-template-columns: 300px 1fr;  /* ✅ two columns for tablets */
+        gap: 40px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+        grid-template-columns: 350px 1fr;  /* ✅ desktop original size */
+        gap: 50px;
+    }
+}
+
+
+
+.sidebar{
+    background-color: #2a2a2a;
+    border: 5px solid #3a3a3a;
+    height: 900px;  
+    position: sticky;
+    top: 20px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+@media  (max-width:700px) {
+    .sidebar{
+        position: relative;
+    }
+}
+
+.main-content{
+    
+    background-color: #2a2a2a;
+    border: 5px solid #3a3a3a;
+    border-radius: 16px;
+    padding: 40px;
+    
+}
+
+/* profile information*/
+
+.profile{
+    text-align: center;
+}
+
+.profile img{
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    border: 2px solid #3a3a3a;;
+}
+
+.profile h2{
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-top: 20px;
+    color: #e0e0e0;
+}
+
+.profile p{
+    background-color: #1e1e1e;
+    color: #FFBF00;
+    padding: 5px 15px;
+    border: 1px solid #3a3a3a;
+    font-size: 1.15rem;
+    border-radius: 8px;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+/*contact information*/
+
+.contact{
+    margin-top: 30px;
+    border-top: 5px solid #3a3a3a;
+    padding-top: 20px;
+}
+
+.label{
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-top: 20px;
+    color: #a0a0a0;
+}
+
+
+.value{
+    font-size: 1rem;
+    font-weight: 700;
+    color: #e0e0e0;
+    text-decoration: none;
+}
+
+.social{
+    margin-top: 30px;
+    border-top: 5px solid #3a3a3a;
+    padding-top: 20px;
+    text-align: center;
+    
+}
+
+.social img{
+    height: 40px;
+    width: 40px;
+    filter:grayscale(1) invert(0.7);
+    transition: filter 0.3s ease;
+    
+}
+
+.social img:hover{
+    filter:grayscale(0) invert(0);
+}
+
+/*navigation*/
+
+#navigation{
+    
+    border-bottom: 2px solid #3a3a3a;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;        /* ✅ allow wrapping on mobile */
+    justify-content: center; /* ✅ center links on small screens */
+    gap: 15px;
+}
+
+@media (min-width: 768px) {
+    nav {
+        justify-content: flex-end; /* ✅ back to right for tablet/desktop */
+        gap: 30px;
+    }
+}
+
+
+nav a{
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #a0a0a0;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    
+}
+
+nav a:hover{
+    color: #FFBF00;
+}
+
+
+/*About ME*/
+
+.heading{
+    color: #e0e0e0;
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.line{
+    width: 70px;
+    height: 5px;
+    background-color: #FFBF00;
+    margin-bottom: 15px;
+}
+
+.me{
+    font-size: 1.2rem;
+    text-align: justify;
+}
+
+#skills{
+    margin-top: 40px;
+}
+
+
+.grid_container{
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px,1fr));  
+    gap: 40px;
+}
+
+.item{
+    background-color: #1e1e1e;   
+    padding: 20px;
+    border: 2px solid #3a3a3a;
+    font-size: 1.15rem;
+    font-weight: 500rem;
+    border-radius: 10px;
+    margin-top: 10px;
+    text-align: center;
+    transition: transform 0.3s ease, boxshadow 0.3s ease;
+}
+
+.item img{
+    height: 48px;
+    width: 48px;
+    filter: brightness(0) saturate(100%) invert(77%) sepia(55%) saturate(2883%) hue-rotate(0deg) brightness(104%) contrast(103%); 
+    margin-bottom: 15px;  
+}
+
+.item:hover{
+    transform: scale(1.1);
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.3);
+}
+
+
+
+/*Education*/
+
+#education{
+    margin-top: 30px;
+}
+
+.edtech{
+    position: relative;
+}
+
+.year{
+    font-size: 1rem;
+    color: #a0a0a0;
+    margin-bottom: 5px;
+}
+
+.degree{
+    color: #e0e0e0;
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.institude{
+    font-style: italic;
+    color: #a0a0a0;
+    margin-bottom: 10px;
+}
+
+.learning{
+    color: #a0a0a0;
+}
+
+.first, .second{
+    margin-bottom: 30px;
+    position: relative;
+    padding-left: 30px;
+}
+
+.goal{
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    border: 5px solid #FFBF00;
+    position: absolute;
+    z-index: 5;
+}
+
+.liner{
+    position: absolute;
+    width: 2px;
+    top: 0px;
+    bottom: 0px;
+    left: 9px;
+    border: 2px solid #3a3a3a;
+}
+
+.project-container {
+    display: grid;
+    grid-template-columns: 1fr;  /* ✅ single column default */
+    gap: 20px;
+}
+
+@media (min-width: 768px) {
+    .project-container {
+        grid-template-columns: 1fr 1fr;  /* ✅ 2 columns only on bigger screens */
+        gap: 30px;
+    }
+}
+
+.project-container img {
+    width: 100%;   /* ✅ scale to parent */
+    height: auto;
+}
+
+
+.card{
+    padding: 10px;
+}
+
+.card h3{
+    color: #e0e0e0;
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.card p{
+    font-style: italic;
+    color: #a0a0a0;
+    margin-bottom: 10px;    
+}
+
+.card span{
+    background-color: #1e1e1e;
+    color: #FFBF00;
+    padding: 5px 15px;
+    border: 1px solid #3a3a3a;
+    font-size: 1.15rem;
+    border-radius: 8px;
+    display: inline-block;
+}
+
+.project{
+    transition: transform 0.3s ease, boxshadow 0.3s ease;
+    border-radius: 10px;
+    border: 1px solid #3a3a3a;
+    overflow: hidden;
+}
+
+.project:hover{
+    transform: scale(1.1);
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.3);
+}
+
+/*background*/
+
+.waves {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /*background: url(https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExMXU2dXk0YWsyNXRvb2p1MDRqbG40c2ViNW1vbnc4M3licDFjaTB6NCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/jaOXKCxtBPLieRLI0c/giphy.webp);*/
+    z-index: -1;
+}

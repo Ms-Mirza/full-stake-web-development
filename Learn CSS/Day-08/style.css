@@ -1,0 +1,51 @@
+h1{
+    background-color: aquamarine;
+    height: 40px;
+    width: 255px;
+
+    /*border-width: 2px;
+    border-style: dashed;
+    border-color:blue;*/
+
+    /*short form of border*/
+
+    border: 2px solid gray;
+    border-radius: 15px;
+
+    padding: 10px;
+    margin: 5px;
+
+}
+
+h2{
+    background-color: blueviolet;
+    height: 30px;
+    width: 255px;
+
+    border: 2px solid blue;
+    border-radius: 15px;
+
+    padding: 10px;
+    margin: 5px;
+}
+
+#first{
+    background-color: beige;
+    height: 60px;
+    width: 500px;
+
+    border: 2px solid rgb(13, 212, 30);
+    border-radius: 15px;
+    
+    padding: 10px 15px 20px 25px;
+    margin: 5px
+}
+
+#second{
+    background-color: blanchedalmond;
+    height: 70px;
+    width: 600px;
+    border-bottom: 5px solid green;
+    padding: 10px;
+    margin: 5px;
+}

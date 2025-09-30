@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn HTML-PAGE-04</title>
+</head>
+
+<body>
+    <img src="https://miro.medium.com/v2/resize:fit:1400/0*en4FN5Fk18FX3dnN.jpg" height="450px" width="100%"
+        alt="HTML Image">
+    <hr>
+    <nav>
+        <table border="2" width="80%" align="center">
+            <tr>
+                <td><a href="index.html">Home</a></td>
+                <td><a href="page1.html">Page-01</a></td>
+                <td><a href="page2.html">Page-02</a></td>
+                <td><a href="page3.html">Page-03</a></td>
+                <td><a href="page4.html">Page-04</a></td>
+                <td><a href="page5.html">Page-05</a></td>
+                <td><a href="page6.html">Page-06</a></td>
+            </tr>
+        </table>
+    </nav>
+    <hr>
+    <h1>📒 Notes on File Path System, Boilerplate, and Multipage Websites</h1>
+    <hr>
+    <h2>1. File Path System</h2>
+    <h3>🔹 Step 1: First Principle (Fundamental Truth)</h3>
+    <ul>
+        <li>A website is <strong>not one single file</strong>.</li>
+        <li>It’s a <strong>collection of files</strong> (HTML, CSS, JS, images, videos, fonts) organized in folders.
+        </li>
+    </ul>
+    <hr>
+    <h3>🔹 Step 2: Core Problem</h3>
+    <ul>
+        <li>If <code>index.html</code> needs to display <code>logo.png</code>, how does it tell the browser
+            <strong>where to find</strong> it?.</li>
+        <li>Browser needs an <strong>exact, unambiguous address</strong> → This is the <strong>file path</strong>.</li>
+    </ul>
+    <hr>
+    <h3>A) Relative File Paths (most used in projects)</h3>
+    <ul>
+        <li>Start from the <strong>location of the current file</strong>.</li>
+        <li>Used <strong>99% of the time</strong> for linking own files (images, CSS, HTML pages).</li>
+    </ul>
+    <h4>📂 Example Structure:</h4>
+    <table border="1" width="80%">
+        <tr>
+            <td>
+                <pre>
+                my-website/
+                ├── index.html
+                ├── about.html
+                │
+                ├── images/
+                │   ├── logo.png
+                │   └── hero.jpg
+                │
+                └── pages/
+                    ├── contact.html
+                    └── terms.html
+
+            </pre>
+            </td>
+        </tr>
+    </table>
+    <h4>✅ Scenarios:</h4>
+    <ol>
+        <h4>
+            <li>Same folder
+        </h4>
+        <ul>
+            <li>index.html → about.html</li>
+            <table border="1" width="80%">
+                <tr>
+                    <td>
+                        <pre>
+               &lt;a href="about.html"&gt;About Us&lt;/a&gt;
+            </pre>
+                    </td>
+                </tr>
+            </table>
+        </ul>
+        </li>
+        <h4>
+            <li>Sub-folder (going down)
+        </h4>
+        <ul>
+            <li>index.html → images/logo.png</li>
+            <table border="1" width="80%">
+                <tr>
+                    <td>
+                        <pre>
+               &lt;img src="images/logo.png" alt="My Website Logo"&gt;
+            </pre>
+                    </td>
+                </tr>
+            </table>
+        </ul>
+        </li>
+        <h4>
+            <li>Parent folder (going up)
+        </h4>
+        <ul>
+            <li>contact.html (inside <code>pages/</code>) → logo.png (inside <code>images/</code>)</li>
+            <table border="1" width="80%">
+                <tr>
+                    <td>
+                        <pre>
+               &lt;img src="../images/logo.png" alt="My Website Logo"&gt;
+            </pre>
+                    </td>
+                </tr>
+            </table>
+            <br>
+            <li><code>../</code> → goes up one level.</li>
+            <li>then → into <code>images/ → logo.png</code>.</li>
+        </ul>
+        </li>
+    </ol>
+    <hr>
+    <h3>B) Absolute File Paths</h3>
+    <ul>
+        <li>Full URL (starts with <code>http://</code> or <code>https://</code>).</li>
+        <li>Use <strong>only</strong> when linking resources <strong>not on your own website</strong>.</li>
+    </ul>
+    <p>✅ Example:</p>
+    <table border="1" width="80%">
+        <tr>
+            <td>
+                <pre>
+                &lt;a href="https://www.google.com"&gt;Search on Google&lt;/a&gt;
+                &lt;img src="https://upload.wikimedia.org/.../Html5_logo_and_wordmark.svg" alt="HTML5 Logo"&gt;
+                </pre>
+            </td>
+        </tr>
+    </table>
+    <h4>❌ Mistake: Using local absolute path</h4>
+    <table border="1" width="80%">
+        <tr>
+            <td>
+                <pre>
+                &lt;img src="C:/Users/Arjun/Desktop/my-website/images/logo.png"&gt;
+                </pre>
+            </td>
+        </tr>
+    </table>
+    <br>
+    <ul>
+        <li>Works <strong>only on your computer</strong>.</li>
+        <li>Fails on web server.</li>
+    </ul>
+    <p><strong>Reason:</strong> Browsers run code inside a <strong>sandbox</strong> (secure prison).</p>
+    <ul>
+        <li>Inmates → HTML, CSS, JS.</li>
+        <li>Walls → Browser.</li>
+        <li>Rule: No free access to host computer’s file system.</li>
+    </ul>
+    <br>
+    <p>⚠️ Without sandbox → malicious site could try:</p>
+    <table border="1" width="80%">
+        <tr>
+            <td>
+                <pre>
+                &lt;img src="C:/Users/Arjun/Documents/MyPrivatePasswords.txt"&gt;
+                </pre>
+            </td>
+        </tr>
+    </table>
+    <h3>✅ Summary / Rules of Thumb</h3>
+    <ol>
+        <h4><li>Own files (internal): Use Relative Paths</h4>
+            <ul>
+                <li><code>filename.html</code> (same folder)</li>
+                <li><code>folder/filename.html</code> (down)</li>
+                <li><code>../filename.html</code> (up)</li>
+            </ul>
+        </li>
+        <h4><li>External files (outside website): Use Absolute Paths</h4>
+            <ul>
+                <li><code>https://...</code></li>
+            </ul>
+        </li>
+    </ol>
+    <hr>
+
+    <h3>📂 Absolute Paths in OS</h3>
+    <ul>
+        <h4><li>Windows:</h4>
+            <ul>
+                <li>Root → Drive letter (C:).</li>
+                <li>Separator → Backslash \.</li>
+                <li>Example:</li>
+                <table border="1" width="80%">
+                    <tr>
+                        <td>
+                        <pre>
+                        C:\Users\JohnDoe\Documents\report.docx
+                        </pre>
+                        </td>
+                    </tr>
+                </table>
+            </ul>
+        </li>
+        <h4><li>macOS/Linux:</h4>
+            <ul>
+                <li>Root → Single /.</li>
+                <li>Separator → Forward slash /.</li>
+                <li>Example:</li>
+                <table border="1" width="80%">
+                    <tr>
+                        <td>
+                        <pre>
+                        /Users/johndoe/Documents/report.docx
+                        </pre>
+                        </td>
+                    </tr>
+                </table>
+            </ul>
+        </li>
+    </ul>
+    <br>
+    <table border="1" width="80%" align="center" cellpadding="10" cellspacing="0">
+        <tr>
+            <th>Feature</th>
+            <th>Windows</th>
+            <th>macOS/Linux</th>
+        </tr>
+        <tr>
+            <td>Root</td>
+            <td>Drive letter (C:)</td>
+            <td align="center">/</td>
+        </tr>
+        <tr>
+             <td>Separator</td>
+            <td align="center">\</td>
+            <td align="center">/</td>
+        </tr>
+        <tr>
+            <td>Example</td>
+            <td>C:\Users\JohnDoe\Documents\report.docx</td>
+            <td>/Users/johndoe/Documents/report.docx</td>
+        </tr>
+    </table>
+    <h2>2. HTML Boilerplate Code</h2>
+    <h3>🔹 First Principle</h3>
+    <ul>
+        <li>Browser needs <strong>predictable instructions</strong>.</li>
+        <li>Can’t guess → needs info like version, encoding, title, responsiveness.</li>
+    </ul>
+    <hr>
+    <h3>🔹 Core Problem</h3>
+    <ul>
+        <li>Without setup info:
+            <ul>
+                <li>Browser won’t know HTML version, encoding, title, or viewport behavior.</li>
+            </ul>
+        </li>
+    </ul>
+    <hr>
+    <h3>🔹 Solution → Boilerplate Template</h3>
+    <table border="1" width="80%">
+        <tr>
+            <td>
+                <pre>
+                    
+                &lt;!DOCTYPE html&gt;
+                    
+                &lt;html lang="en"&gt;
+                    
+                &lt;head&gt;
+                        
+                    &lt;meta charset="UTF-8"&gt;
+                        
+                    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+                        
+                    &lt;title>Document&lt;/title&gt;
+                    
+                &lt;/head&gt;
+                
+                &lt;body&gt;
+
+                    
+                &lt;/body&gt;
+                    
+                &lt;/html&gt;
+
+                </pre>
+            </td>
+        </tr>
+    </table>
+    <h3>🔹Explanation Of Boilerplate Code</h3>
+    <ol>
+        <h3><li>
+            <code>&lt;!DOCTYPE html&gt;</code></h3>
+            <ul>
+                <li>Tells browser to use HTML5 standards mode.</li>
+                <li>Must be first line.</li>
+            </ul>
+        </li>
+        <br>
+        <h3><li>
+            <code> &lt;html lang="en"&gt;</code></h3>
+            <ul>
+                <li>Root element.</li>
+                <li><code>lang</code> = content language (important for SEO + accessibility).</li>
+            </ul>
+        </li>
+        <br>
+        <h3><li>
+            <code>&lt;head&gt;....&lt;/head&gt;</code></h3>
+            <ul>
+                <li>Holds <strong>metadata</strong> (not visible content).</li>
+            </ul>
+        </li>
+        <br>
+        <h3><li>
+            <code>&lt;meta charset="UTF-8"&gt;</code></h3>
+            <ul>
+                <li>Defines encoding.</li>
+                <li>UTF-8 supports nearly all characters.</li>
+            </ul>
+        </li>
+        <br>
+        <h3><li>
+            <code>&lt;meta name="viewport" ......&gt;</code></h3>
+            <ul>
+                <li>Enables <strong>responsive design</strong>.</li>
+                <li><strong><code>width=device-width</code></strong> → fit device width.</li>
+                <li><strong><code>initial-scale=1.0</code></strong> → zoom 100%.</li>
+            </ul>
+        </li>
+        <br>
+        <h3><li>
+            <code>&lt;title>Document&lt;/title&gt;</code></h3>
+            <ul>
+                <li>Text in tab, bookmarks, search results.</li>
+            </ul>
+        </li>
+        <br>
+        <h3><li>
+            <code>&lt;body&gt;.....&lt;/body&gt;</code></h3>
+            <ul>
+                <li>Holds <strong>visible content</strong> (headings, text, images, links, etc.).</li>
+            </ul>
+        </li>
+    </ol>
+    <hr>
+    <h3>🔹 Why Website Works Without Boilerplate?</h3>
+    <p>Browsers = forgiving. They auto-correct:</p>
+    <ol>
+        <li>Missing DOCTYPE → Quirks Mode.</li>
+        <li>Missing <html>/<body> → auto-generated in DOM.</li>
+        <li>Missing charset → browser guesses.</li>
+        <li>Missing title → filename used.</li>
+    </ol>
+    <hr>
+    <h3>⚠️ Why Still Use Boilerplate?</h3>
+    <ul>
+        <li><strong>Unpredictable Rendering</strong>: Different quirks in Chrome/Firefox/Safari.</li>
+        <li><strong>Broken Characters</strong>: Special symbols may fail.</li>
+        <li><strong>Bad Mobile UX</strong>: Without viewport tag → tiny, unreadable.</li>
+        <li><strong>Poor SEO & Accessibility</strong>: Search engines + screen readers suffer.</li>
+    </ul>
+    <p>👉 Boilerplate = professional, reliable, future-proof foundation.</p>
+    <hr>
+    <h2>3. Multipage Website</h2>
+    <h3>🔹 Fundamental Truth</h3>
+    <ul>
+        <li>Complex info ≠ one long page.</li>
+        <li>Websites → multiple pages (Home, About, Services, Contact).</li>
+    </ul>
+    <hr>
+
+    <h3>🔹 Core Problem</h3>
+    <ul>
+        <li>Need way for users to navigate between pages.</li>
+    </ul>
+    <hr>
+
+    <h3>🔹 Logical Solution</h3>
+    <ol>
+        <li><strong>Consistent Structure</strong>: Common header/footer.</li>
+        <li><strong>Linking System</strong>: Navigation menu with <a> on every page.</li>
+    </ol>
+    <hr>
+    <h2>4. The <code>&lt;div&gt;</code> (Generic Box)</h2>
+    <ul>
+        <li>Groups multiple elements together.</li>
+        <li>No inherent meaning.</li>
+        <li>Useful for applying styles to a <strong>whole block</strong>.</li>
+    </ul>
+    <p>✅ Example:</p>
+    <table border="1" width="80%">
+        <tr>
+            <td>
+                <pre>
+                    &lt;div&gt;
+                        &lt;img src="avatar.png"&gt;
+                        &lt;h2&gt;Arjun Kumar&lt;/h2&gt;
+                        &lt;p&gt;Loves to code and teach HTML.&lt;/p&gt;
+                    &lt;/div&gt;
+
+                </pre>
+            </td>
+        </tr>
+    </table>
+    <hr>
+    <h2>5. class & id (Labels for Boxes)</h2>
+    <ul>
+        <li><strong>Problem</strong>: Many <code>&lt;div&gt;</code>s. Need way to target specific ones.</li>
+        <li><strong>Solution:</strong>
+            <ul>
+                <li><code>id</code> → unique (one element).</li>
+                <li><code>class</code> → reusable (many elements).</li>
+            </ul>
+        </li>
+    </ul>
+    <p>✅ Example:</p>
+    <table border="1" width="80%">
+        <tr>
+            <td>
+                <pre>
+                    &lt;div id="main-header"&gt;...&lt;/div&gt;
+                    &lt;div id="featured-profile" class="profile-card">...&lt;/div&gt;
+                    &lt;div class="profile-card"&gt;...&lt;/div&gt;
+                </pre>
+            </td>
+        </tr>
+    </table>
+    <p>✅ CSS targeting:</p>
+    <ul>
+        <li><code>#main-header { ... }</code> → one element.</li>
+        <li><code>.profile-card { ... }</code> → all with class.</li>
+        <li><code>#featured-profile { ... }</code> → one special case.</li>
+    </ul>
+    <hr>
+    <h2>6. The <code>&lt;span&gt;</code> (Inline Highlighter)</h2>
+    <ul>
+        <li>Inline container (doesn’t break line).</li>
+        <li>Used for styling <strong>part of a text</strong>.</li>
+    </ul>
+    <p>✅ Example:</p>
+    <table border="1" width="80%">
+        <tr>
+            <td>
+                <pre>
+                    &lt;p&gt;This is very &lt;span class="highlight"&gt;important&lt;/span&gt; information.&lt;/p&gt;
+                </pre>
+            </td>
+        </tr>
+    </table>
+    <p>Analogy → highlighter pen ✍️ (marks text without breaking page).</p>
+    <hr>
+    <h2>7. Semantic Tags</h2>
+    <ul>
+        <li>&lt;header&gt; → Intro/top section (logo, nav).</li>
+        <li>&lt;footer&gt; → Bottom section (copyright, contact, links).</li>
+        <li>&lt;main&gt; → Unique content of page (only one per page).</li>
+    </ul>
+    <hr>
+    <h4>Recommended video:</h4>
+    <iframe src="https://youtube.com/embed/k78lNSAB8VY?si=BO3SuU8hAmHXmiyX" allowfullscreen></iframe>
+    <hr>
+    <footer>
+        <a href="page3.html">🚀| ← Previous Page |</a>
+        <a href="page5.html">🚀| Next Page → |</a>
+    </footer>
+</body>
+
+</html>

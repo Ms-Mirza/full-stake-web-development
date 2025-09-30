@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn HTML-PAGE-03</title>
+</head>
+
+<body>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZfbRia-RHZbVqF8xyS8XHQzM9g-7wQSCk4Q&s" height="450px" width="100%" alt="HTML Image">
+    <hr>
+    <nav>
+        <table border="2" width="80%" align="center">
+            <tr>
+                <td><a href="index.html">Home</a></td>
+                <td><a href="page1.html">Page-01</a></td>
+                <td><a href="page2.html">Page-02</a></td>
+                <td><a href="page3.html">Page-03</a></td>
+                <td><a href="page4.html">Page-04</a></td>
+                <td><a href="page5.html">Page-05</a></td>
+                <td><a href="page6.html">Page-06</a></td>
+            </tr>
+        </table>
+    </nav>
+    <hr>
+    <h1>📘 Notes on HTML Nested Lists & Tables</h1>
+    <hr>
+    <h2>✨ Part 1: HTML Nested Lists</h2>
+    <h3>🔹 Tags Used in Nested Lists</h3>
+    <ul>
+        <li>&lt;ul&gt; →Defines an <strong>Unordered list</strong> (bullets).</li>
+        <li>&lt;ol&gt; → Defines an <strong>Ordered list</strong> (numbers/letters).</li>
+        <li>&lt;li&gt; → Defines a <strong>List item</strong> (inside &lt;ul&gt; or &lt;ol&gt;).</li>
+        <li>Nested list = A list <strong>inside another</strong> &lt;li&gt;.</li>
+    </ul>
+    <h3>🔹 Example 1: Unordered List inside Unordered List</h3>
+    <table border="1" width="80%">
+     <tr><td>  
+    <pre>
+    &lt;ul&gt;
+        &lt;li&gt;Fruits
+            &lt;ul&gt;
+                &lt;li&gt;Apple&lt;/li&gt;
+                &lt;li&gt;Banana&lt;/li&gt;
+                &lt;li&gt;Orange&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/li&gt;
+        &lt;li&gt;Vegetables
+            &lt;ul&gt;
+                &lt;li&gt;Carrot&lt;/li&gt;
+                &lt;li&gt;Potato&lt;/li&gt;
+                &lt;li&gt;Tomato&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+    </pre>
+    </td> </tr>
+    </table>
+    <hr>
+    <h3>🔹 Example 2: Ordered List inside Unordered List</h3>
+    <table border="1" width="80%">
+     <tr><td>  
+    <pre>
+        &lt;ul&gt;
+            &lt;li&gt;Steps to Make Tea
+                &lt;ol&gt;
+                    &lt;li&gt;Boil Water&lt;/li&gt;
+                    &lt;li&gt;Add Tea Leaves&lt;/li&gt;
+                    &lt;li&gt;Add Sugar &amp; Milk&lt;/li&gt;
+                    &lt;li&gt;Serve Hot&lt;/li&gt;
+                &lt;/ol&gt;
+            &lt;/li&gt;
+        &lt;/ul&gt;
+    </pre>
+    </td> </tr>
+    </table>
+    <hr>
+    <h2>✨ Part 2: HTML Tables</h2>
+    <h3>🔹 Tags Used in Tables</h3>
+    <ul>
+        <li>&lt;table&gt; → Creates a <strong>table</strong>.</li>
+        <li>&lt;tr&gt; → Defines a <strong>table row</strong>.</li>
+        <li>&lt;th&gt; → Defines a <strong>table header cell</strong> (bold & centered by default).</li>
+        <li>&lt;td&gt; → Defines a <strong>table data cell</strong>.</li>
+        <li>&lt;td&gt; → Defines a table data cell.</li>
+    </ul>
+    <hr>
+    <h3>🔹 Example 1: Simple Table</h3>
+    <table border="1" width="80%">
+        <tr>
+            <td>
+            <pre>
+            &lt;table border="1"&gt;
+            &lt;tr&gt;
+                &lt;th&gt;Roll No&lt;/th&gt;
+                &lt;th&gt;Name&lt;/th&gt;
+                &lt;th&gt;Marks&lt;/th&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;1&lt;/td&gt;
+                &lt;td&gt;Rahim&lt;/td&gt;
+                &lt;td&gt;85&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;2&lt;/td&gt;
+                &lt;td&gt;Karim&lt;/td&gt;
+                &lt;td&gt;90&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;/table&gt;
+        </pre>
+            </td>
+        </tr>
+    </table>
+    <hr>
+    <h3>🔹 Example 2: Nested Table</h3>
+    <table border="1" width="80%">
+        <tr>
+            <td>
+                <pre>
+                &lt;table border="1"&gt;
+                    &lt;tr&gt;
+                        &lt;th&gt;Name&lt;/th&gt;
+                        &lt;th&gt;Details&lt;/th&gt;
+                    &lt;/tr&gt;
+                    &lt;tr&gt;
+                        &lt;td&gt;Rahim&lt;/td&gt;
+                        &lt;td&gt;
+                            &lt;table border="1"&gt;
+                                &lt;tr&gt;
+                                    &lt;td&gt;Subject&lt;/td&gt;
+                                    &lt;td&gt;Marks&lt;/td&gt;
+                                &lt;/tr&gt;
+                                &lt;tr&gt;
+                                    &lt;td&gt;Math&lt;/td&gt;
+                                    &lt;td&gt;90&lt;/td&gt;
+                                &lt;/tr&gt;
+                                &lt;tr&gt;
+                                    &lt;td&gt;Science&lt;/td&gt;
+                                    &lt;td&gt;85&lt;/td&gt;
+                                &lt;/tr&gt;
+                            &lt;/table&gt;
+                        &lt;/td&gt;
+                    &lt;/tr&gt;
+                &lt;/table&gt;
+                </pre>
+            </td>
+        </tr>
+    </table>
+    <hr>
+    <h2>📝 Summary</h2>
+    <ul>
+        <li>Use &lt;ul&gt;, &lt;ol&gt;, and &lt;li&gt; for <strong>nested lists</strong>.</li>
+        <li>Use &lt;table&gt;, &lt;tr&gt;, &lt;th&gt;, and &lt;td&gt; for <strong>tables</strong>.</li>
+        <li>Both lists and tables can be <strong>nested</strong> to organize complex information.</li>
+    </ul>
+    <hr>
+    <h4>Recommended video:</h4>
+    <iframe src="https://youtube.com/embed/AJ4E1zf5tQs?si=6WdhJCAMQh1R2NNi" allowfullscreen></iframe>
+    <hr>
+    <footer>
+        <a href="page2.html">🚀| ← Previous Page |</a>
+        <a href="page4.html">🚀| Next Page → |</a>
+    </footer>
+</body>
+
+</html>

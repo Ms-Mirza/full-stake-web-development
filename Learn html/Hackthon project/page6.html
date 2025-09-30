@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn HTML-PAGE-06</title>
+</head>
+<body>
+    <img src="https://files.codingninjas.in/article_images/html-media-attribute-0-1740462018.webp" height="450px"
+        width="100%" alt="HTML Image">
+    <hr>
+    <nav>
+        <table border="2" width="80%" align="center">
+            <tr>
+                <td><a href="index.html">Home</a></td>
+                <td><a href="page1.html">Page-01</a></td>
+                <td><a href="page2.html">Page-02</a></td>
+                <td><a href="page3.html">Page-03</a></td>
+                <td><a href="page4.html">Page-04</a></td>
+                <td><a href="page5.html">Page-05</a></td>
+                <td><a href="page6.html">Page-06</a></td>
+            </tr>
+        </table>
+    </nav>
+    <hr>
+    <h1>📒 Notes on Embedding Media and Special Symbols in HTML</h1>
+    <hr>
+    <h2>1. First Principle: The Web is More Than Text and Images</h2>
+    <ul>
+        <li>A webpage should deliver <strong>any kind of content</strong>, not just text and pictures.</li>
+        <li>Historically, embedding video/audio required <strong>third-party plugins</strong> (Adobe Flash, QuickTime, Silverlight).</li>
+        <li>Problems with plugins:
+            <ul>
+                <li>Inefficient</li>
+                <li>Insecure</li>
+                <li>Inconsistent across devices</li>
+            </ul>
+        </li>
+    </ul>
+    <h3>Core Problem:</h3>
+    <p>👉 How can we embed video/audio in a standardized, native, plugin-free way that works across all browsers and devices?</p>
+    <br>
+    <h3>Logical Solution:</h3>
+    <p>👉 HTML5 introduced the &lt;video&gt; and &lt;audio&gt; tags, designed specifically for embedding media.</p>
+    <hr>
+    <h2>2. <code>&lt;video&gt;</code> Tag Basics</h2>
+    <h3>Example 1: Minimal Usage</h3>
+    <table border="1" width="80%">
+        <tr>
+            <td>
+                <pre>
+                    &lt;video src="my-awesome-video.mp4"&gt;&lt;/video&gt;
+                </pre>
+            </td>
+        </tr>
+    </table>
+    <ul>
+        <li>Only displays the first frame (static image).</li>
+        <li>No play/pause, volume, or controls.</li>
+    </ul>
+    <h3>Adding Controls</h3>
+    <table border="1" width="80%">
+        <tr>
+            <td>
+                <pre>
+                    &lt;video src="my-awesome-video.mp4" controls&gt;&lt;/video&gt;
+                </pre>
+            </td>
+        </tr>
+    </table>
+    <ul>
+        <li><code>controls</code> is a <strong>boolean attribute</strong> (no need for<code>controls="true"</code>).</li>
+        <li>Enables built-in browser controls: play/pause, timeline, volume, fullscreen.</li>
+    </ul>
+    <hr>
+    <h2>3. Intermediate Control with Attributes</h2>
+    <ul>
+        <li><strong>width / height</strong> → sets player dimensions</li>
+    </ul>
+    <table border="1" width="80%">
+        <tr>
+            <td>
+                <pre>
+                    &lt;video src="video.mp4" width="640" height="360" controls&gt;&lt;/video&gt;
+                </pre>
+            </td>
+        </tr>
+    </table>
+    <ul>
+        <li><strong>autoplay</strong> → starts video automatically
+            <li>⚠️ Blocked with sound in modern browsers</li>
+            <li>To work, add <code>muted</code></li>
+        </li>
+    </ul>
+    <table border="1" width="80%">
+        <tr>
+            <td>
+                <pre>
+                    &lt;video src="video.mp4"autoplay muted controls&gt;&lt;/video&gt;
+                </pre>
+            </td>
+        </tr>
+    </table>
+     <ul>
+        <li><strong>loop</strong> → restarts automatically when finished</li>
+        <li><strong>poster</strong> → thumbnail before playback.</li>
+    </ul>
+    <table border="1" width="80%">
+        <tr>
+            <td>
+                <pre>
+                    &lt;video src="video.mp4" poster="images/video-thumbnail.jpg" controls&gt;&lt;/video&gt;
+                </pre>
+            </td>
+        </tr>
+    </table>
+    <hr>
+    <h2>4.<code>&lt;audio&gt;</code> Tag</h2>
+    <ul>
+        <li>Works like <code>&lt;video&gt;</code> but only plays sound (no visuals).
+        <h3>Example:</h3>
+        <table border="1" width="80%">
+        <tr>
+            <td>
+                <pre>
+                    &lt;p&gt;Listen to our theme song:&lt;/p&gt;
+                    &lt;audio src="audio/theme-song.mp3" controls&gt;&lt;/audio&gt;
+                </pre>
+            </td>
+        </tr>
+        </table>
+        </li>
+        <li>Features: play/pause, timeline, volume</li>
+        <li>Supports attributes: <code>autoplay, loop, muted</code></li>
+    </ul>
+    <hr>
+    <h2>5. Advanced: Real-World Solutions</h2>
+    <h3>Problem 1: Browser Format Support</h3>
+    <ul>
+        <li>Different browsers prefer different formats:
+            <ul>
+                <li>Chrome: <code>.webm</code></li>
+                <li>Safari (iPhone): <code>.mp4</code></li>
+                <li>Older browsers: <code>.ogg</code></li>
+            </ul>
+        </li>
+        <li>If only one format is provided, some users may not see the video.</li>
+    </ul>
+    <h3>Solution: <code>&lt;source&gt;</code> element</h3>
+    <table border="1" width="80%">
+        <tr>
+            <td>
+                <pre>
+                    &lt;video controls poster="images/thumbnail.jpg"&gt;
+                        &lt;source src="videos/my-video.webm" type="video/webm"&gt;
+                        &lt;source src="videos/my-video.mp4" type="video/mp4"&gt;
+                        Sorry, your browser doesn't support embedded videos.
+                    &lt;/video&gt;
+                </pre>
+            </td>
+        </tr>
+    </table>
+    <ul>
+        <li>Browser picks the <strong>first supported format.</strong></li>
+        <li><code>type</code> helps avoid wasted downloads.</li>
+    </ul>
+    <hr>
+    <h3>Problem 2: Accessibility</h3>
+    <ul>
+        <li>Deaf/hard of hearing → need captions</li>
+        <li>Noisy/quiet environments → need text</li>
+        <li>Different languages → need subtitles</li>
+    </ul>
+    <h3>Solution: <code>&lt;track&gt;</code> element (WebVTT format)</h3>
+    <table border="1" width="80%">
+        <tr>
+            <td>
+                <pre>
+                    &lt;video controls&gt;
+                        &lt;source src="video.webm" type="video/webm"&gt;
+                        &lt;source src="video.mp4" type="video/mp4"&gt;
+
+                        &lt;track src="captions_en.vtt" kind="captions" srclang="en" label="English"&gt;
+                        &lt;track src="subtitles_es.vtt" kind="subtitles" srclang="es" label="Español"&gt;
+                    &lt;/video>
+
+                </pre>
+            </td>
+        </tr>
+    </table>
+    <h3>Attributes:</h3>
+    <ul>
+        <li><code>src</code> → path to <code>.vtt</code> file</li>
+        <li><code>kind</code> → captions / subtitles / descriptions</li>
+        <li><code>srclang</code> → language code (e.g., <code>en, es</code>)</li>
+        <li><code>label</code> → name in video player menu</li>
+    </ul>
+    <hr>
+    <h2>6. Embedding Media: Two Main Methods</h2>
+    <h3>Example 1: Robust & Professional Method (using <code>&lt;source&gt;</code>)</h3>
+    <table border="1" width="80%">
+        <tr>
+            <td>
+                <pre>
+                    &lt;video width="320" height="240" controls&gt;
+                        &lt;source src="movie.mp4" type="video/mp4"&gt;
+                        &lt;source src="movie.ogg" type="video/ogg"&gt;
+                        Your browser does not support the video tag.
+                    &lt;/video&gt;
+                </pre>
+            </td>
+        </tr>
+    </table>
+    <ul>
+        <li>Ensures <strong>maximum browser compatibility</strong>.</li>
+        <li>File format support:
+            <ul>
+                <li><code>.mp4</code> (H.264 codec) → most widely supported</li>
+                <li><code>.webm</code> (VP8/VP9 codec) → open-source, supported in Chrome/Firefox</li>
+                <li><code>.ogg</code> (Theora codec) → older alternative</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <h3>Logic:</h3>
+    <ol>
+        <li>Browser checks the first &lt;source&gt;</li>
+        <li>If supported → plays it</li>
+        <li>If not → moves to the next option</li>
+        <li>Fallback text shows if &lt;video&gt; isn’t supported at all</li>
+    </ol>
+    <p><strong>Pros:</strong> Reliable, professional, multiple fallbacks</p>
+    <p><strong>Cons:</strong> Requires multiple encoded video formats</p>
+    <hr>
+
+
+    <h3>Example 2: Simple & Direct Method (using <code>src</code>)</h3>
+    <table border="1" width="80%">
+        <tr>
+            <td>
+                <pre>
+                    &lt;video src="a.mp4" controls&gt;&lt;/video&gt;
+                </pre>
+            </td>
+        </tr>
+    </table>
+    <ul>
+        <li>Gives only <strong>one format</strong> option.</li>
+        <li>If unsupported → video fails completely.</li>
+    </ul>
+    <p><strong>Pros:</strong> Very simple, quick setup</p>
+    <p><strong>Cons:</strong> No fallback</p>
+    <hr>
+    <h3>Comparison Table</h3>
+    <table border="1" cellpadding="10" cellspacing="0" width="80%" align="center">
+        <tr>
+            <th>Feature</th>
+            <th>&lt;source&gt; Method</th>
+            <th>src Method</th>
+        </tr>
+     <tr>
+            <td>Browser Compatibility</td>
+            <td>Excellent</td>
+            <td>Good, not guaranteed</td>
+        </tr>
+        <tr>
+            <td>Flexibility</td>
+            <td>High</td>
+            <td>Low</td>
+     </tr>
+        <tr>
+            <td>Simplicity</td>
+            <td>More complex</td>
+            <td>Very simple</td>
+        </tr>
+        <tr>
+            <td>Fallback for Old Browsers</td>
+            <td>Yes</td>
+            <td>No</td>
+        </tr>
+        <tr>
+            <td>Best Use Case</td>
+            <td>Public-facing sites</td>
+            <td>Quick tests / internal projects</td>
+        </tr>
+    </table>
+    <hr>
+    <h2>8. Special Symbols in HTML (Entities)</h2>
+    <h3>Copyright Symbol ©</h3>
+    <ul>
+        <li>Entity Name (Recommended): &amp;copy;
+        <table border="1" width="80%">
+        <tr>
+            <td>
+                <pre>
+                    &lt;footer&gt;
+                        &lt;p&gt;Copyright &amp;copy; 2024 My Awesome Website. All Rights Reserved.&lt;/p&gt;
+                    &lt;/footer&gt;
+                </pre>
+            </td>
+        </tr>
+    </table>
+        </li><br>
+        <li><strong>Entity Number:</strong> &amp;#169;
+            <table border="1" width="80%">
+        <tr>
+            <td>
+                <pre>
+                    &lt;footer&gt;
+                        &lt;p&gt;Copyright &amp;#169; 2024 My Awesome Website. All Rights Reserved.&lt;/p&gt;
+                    &lt;/footer&gt;
+                </pre>
+            </td>
+        </tr>
+    </table>
+        </li>
+    </ul>
+    <p>Both render as:</p>
+    <h3>Copyright © 2024 My Awesome Website. All Rights Reserved.</h3>
+    <hr>
+    <h2>Other Common Entities</h2>
+    <table border="1" cellpadding="10" cellspacing="0">
+    <tr>
+        <th>Symbol</th>
+        <th>Description</th>
+        <th>Entity Name</th>
+        <th>Entity Number</th>
+    </tr>
+    <tr>
+        <td>&#169;</td>
+        <td>Copyright</td>
+        <td>&amp;copy;</td>
+        <td>&amp;#169;</td>
+    </tr>
+    <tr>
+        <td>&#174;</td>
+        <td>Registered Trademark</td>
+        <td>&amp;reg;</td>
+        <td>&amp;#174;</td>
+    </tr>
+    <tr>
+        <td>&#8482;</td>
+        <td>Trademark</td>
+        <td>&amp;trade;</td>
+        <td>&amp;#8482;</td>
+    </tr>
+    <tr>
+        <td>&lt;</td>
+        <td>Less-than (for showing code)</td>
+        <td>&amp;lt;</td>
+        <td>&amp;#60;</td>
+    </tr>
+    <tr>
+        <td>&gt;</td>
+        <td>Greater-than (for showing code)</td>
+        <td>&amp;gt;</td>
+        <td>&amp;#62;</td>
+    </tr>
+    <tr>
+        <td>&amp;</td>
+        <td>Ampersand</td>
+        <td>&amp;amp;</td>
+        <td>&amp;#38;</td>
+    </tr>
+    <tr>
+        <td>&#34;</td>
+        <td>Double Quote</td>
+        <td>&amp;quot;</td>
+        <td>&amp;#34;</td>
+    </tr>
+    <tr>
+        <td>&#8364;</td>
+        <td>Euro Sign</td>
+        <td>&amp;euro;</td>
+        <td>&amp;#8364;</td>
+    </tr>
+    </table>
+    <p><strong>Note:</strong> Entities are required for &lt; and &gt; to prevent browsers from mistaking them for HTML tags.</p>
+    <p>Example: To display &lt;p&gt;, You have to write  <strong>amp;lt;p&amp;gt;</strong>&</p>
+    <hr>
+    <h1>Deploy Your HTML Project on Netlify</h1>
+    <p>Follow these steps to make your HTML project live on the web using Netlify.</p>
+
+    <h2>Step 1: Prepare Your Project</h2>
+    <ul>
+        <li>Put all your HTML files in <strong>one folder</strong>. Example structure:</li>
+        <pre>
+            LearnHTML/
+            ├── index.html
+            ├── page1.html
+            ├── page2.html
+            ├── page3.html
+            ├── page4.html
+            ├── page5.html
+            ├── page6.html
+            ├── images/   (optional)
+            └── videos/   (optional)
+        </pre>
+        <li>Check that all <code>&lt;a&gt;</code> links and <code>&lt;img&gt;</code> paths are correct and relative.</li>
+    </ul>
+
+    <h2>Step 2: Sign Up / Login to Netlify</h2>
+    <ul>
+        <li>Go to <a href="https://www.netlify.com/" target="_blank">Netlify.com</a></li>
+        <li>Sign up or log in using GitHub, GitLab, or Email.</li>
+    </ul>
+
+    <h2>Step 3: Create a New Site (Drag & Drop)</h2>
+    <ol>
+        <li>Click <strong>“Add new site” &rarr; “Deploy manually”</strong>.</li>
+        <li>Drag your project folder (or its contents) into the upload area.</li>
+        <li>Netlify will automatically deploy it and give you a temporary live URL.</li>
+    </ol>
+    <hr>
+    <h2>📒 More Resources for HTML:</h2>
+    <p>👉<a href="https://www.w3schools.com/Html/">W3schools</a></p>
+    <p>👉<a href="https://www.geeksforgeeks.org/html/html-tutorial/">GeeksforGeeks</a></p>
+
+    <hr>
+    <h4>Recommended video:</h4>
+    <iframe src="https://youtube.com/embed/NGYp1zCBthk?si=gy8i7r1qUZnB6GaH" allowfullscreen></iframe>
+    <hr>
+    <footer>
+        <a href="page5.html">🚀| ← Previous Page |</a>      
+    </footer>
+</body>
+</html>

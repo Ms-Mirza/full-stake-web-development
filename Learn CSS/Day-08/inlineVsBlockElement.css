@@ -1,0 +1,83 @@
+
+/*remove the defult margin and padding*/
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+
+
+/*inline element*/
+span{
+    background-color: aqua;
+    padding-left: 10px;
+    margin-right: 10px;
+    margin-left: 10px;
+    padding-right: 10px;
+
+    /*in inline element padding and margin are applicable only horeizontally*/
+
+    border: 2px solid black;
+    
+
+    height: 10px; 
+    width: 500px;
+    /*height and width are not applicable in the inline element*/
+    
+    
+}
+
+/*block element*/
+h2{
+    background-color: aquamarine;
+   
+    
+    border: 2px solid black;
+    
+
+    display: inline;/*convert block element into inline element*/
+
+
+}
+
+/*element that work as inline and block at the same time*/
+#first{
+    display: inline-block;
+    height: 50px; 
+    width: 500px;
+    margin: 10px;
+    padding: 10px;
+    border: 5px solid purple;
+}
+
+#second{
+    display: inline-block;
+    height: 50px; 
+    width: 500px;
+    margin: 10px;
+    padding: 10px;
+    border: 5px solid purple;
+}
+
+#fs{
+    background-color: rgb(234, 45, 171);
+    height: 150px; 
+    width: 150px;
+    margin: 10px;
+    padding: 10px;
+    border: 5px solid purple;
+    box-sizing: border-box; /* here border-box means the content-box + border + padding (for varify check the inspect--> style in live server)
+    display: inline-block;*/
+}
+
+#ds{
+    background-color: rgb(234, 45, 171);
+    height: 150px; 
+    width: 150px;
+    margin: 10px;
+    padding: 10px;
+    border: 5px solid purple;
+    box-sizing: content-box;
+    display: inline-block;
+}
+

@@ -1,0 +1,71 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    background-color: black;
+    display:flex ;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    gap: 20px;
+    perspective: 800px; /*to convert the 2D dymantion into 3D dymantion*/
+}
+
+.box{
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    cursor: pointer;
+    /* transition-property: all;
+    transition-duration: 2s;
+    transition-timing-function: ease-in;
+    transition-delay: 2s; */
+    /* transition: all 2s; */
+    /* transform: skew(30deg); */
+    font-size: 50px;
+    color: white;
+    animation-name: moving;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    
+}
+
+@keyframes moving{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+.box:hover{
+    /* background-color: aqua;
+    width: 200px;
+    height: 300px; */
+    /* transform: scale(2);
+    transform: scaleX(2);
+    transform: scaleY(2); */
+
+    /* transform: translate(100px, 200px); */
+    /* transform: translateX(200px); */
+    /* transform: translateY(200px); */
+
+    /* transform: rotate(360deg); */
+
+    /* transform: translateZ(200px); */
+    transform: rotateX(90deg);
+     
+
+}
+
+.f{
+    background-color: blue;
+}
+
+.s{
+    background-color: aqua;
+}

@@ -1,0 +1,64 @@
+#container{
+    background-color: white;
+    height: 170px;
+    width: 300px;
+    position: relative;
+}
+
+#circle{
+    background-color: red;
+    height: 100px;
+    width: 100px;
+    border-radius: 100px;
+    position: absolute;
+    top: 35px;
+    left: 100px;
+}
+
+#fb{
+    background-color: red;
+    height: 170px;
+    width: 300px;
+    position: relative;
+}
+
+#sb{
+    background-color: rgb(18, 18, 119);
+    height: 90px;
+    width: 300px;
+    position: absolute;
+    top:40px;
+}
+
+#tb{
+    background-color: white;
+    height: 70px;
+    width: 70px;
+    border-radius: 70px;
+    position: absolute;
+    top:10px;
+    left:115px;
+}
+
+#first{
+    background-color: rgb(14, 14, 74);
+    height: 170px;
+    width: 300px;
+    position: relative;
+}
+
+#second{
+    background-color: yellow;
+    height: 170px;
+    width: 30px;
+    position: absolute;
+    left:80px;
+}
+
+#third{
+    background-color: yellow;
+    height: 30px;
+    width: 300px;
+    position: absolute;
+    top: 70px;
+}

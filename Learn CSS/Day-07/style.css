@@ -1,0 +1,49 @@
+/*
+Tag element selector
+
+h1{
+    background-color: aliceblue;
+}
+h2{
+    background-color: antiquewhite;
+}
+*/
+
+ /* id # base selector(use for individual operation)
+
+ #first{
+    background-color: aqua;
+ }
+    */
+
+/*class base selector 
+
+.third{
+    background-color: bisque;
+}
+    */
+
+    /* Group selection
+#first, .third , h2{
+    background-color:blueviolet;
+}
+*/
+
+/* colour manipulation
+h1{
+    background-color: rgba(103, 171, 43, 0.375);
+}
+
+h2{
+    background-color: hsl(100, 50%, 50%);
+}
+#second{
+    background-color: hsla(140, 50%, 50%, 0.6);
+}
+    */
+
+    /*Font*/
+
+h1{
+    font-size: 50px;
+}
