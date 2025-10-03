@@ -1,14 +1,14 @@
 
 
 ```markdown
-# Full Stack Web Development 🚀
+# **Full Stack Web Development** 🚀
 
 This repository contains my journey and practice files while learning **Full Stack Web Development**.  
 I am starting from the basics (HTML & CSS) and moving towards **JavaScript** and beyond.
 
 ---
 
-## 📚 Current Learning Progress
+## 📚** Current Learning Progress**
 
 - ✅ HTML – Structure of webpages  
 - ✅ CSS – Styling and layout  
@@ -18,7 +18,7 @@ I am starting from the basics (HTML & CSS) and moving towards **JavaScript** and
 
 ---
 
-## 📂 Repository Structure
+## 📂** Repository Structure**
 
 ```
 
@@ -40,7 +40,7 @@ full-stack-web-development/
 
 ---
 
-## 🛠️ Technologies
+## 🛠️ **Technologies**
 
 - HTML5  
 - CSS3  
@@ -48,7 +48,7 @@ full-stack-web-development/
 
 ---
 
-## 🚀 How to Use
+## 🚀 **How to Use**
 
 1. Clone the repository:
 ```bash
