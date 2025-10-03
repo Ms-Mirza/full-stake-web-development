@@ -1,6 +1,4 @@
-Nice! 🎉 Since your repository is about your **Full Stack Web Development learning journey**, and you’ve started with **HTML, CSS**, and now **JavaScript**, your README should reflect that. Here’s a neat **ready-to-use `README.md`** you can add directly to your repo:
 
----
 
 ```markdown
 # Full Stack Web Development 🚀
